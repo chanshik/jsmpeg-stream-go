@@ -35,4 +35,12 @@ $ ffmpeg -s 1024x576 -f avfoundation -i "0:1" \
   -codec:a mp2 -b:a 128k -muxdelay 0.001 http://localhost:8082/secret
 ```
 
+On Linux using Video4Linux2 (v4l2)
+```
+$ ffmpeg -s 1024x720 -f v4l2 -i /dev/video0 \
+  -f mpegts -codec:v mpeg1video -b:v 800k -r 24 \
+  -framerate 24 -codec:a mp2 -b:a 128k -muxdelay 0.001 \
+  http://localhost:8082/secret
+```
+
 Open the page http://localhost:8080
