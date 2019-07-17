@@ -1,16 +1,16 @@
 package main
 
 import (
-	"github.com/gorilla/websocket"
 	"github.com/gorilla/mux"
+	"github.com/gorilla/websocket"
 
+	"flag"
+	"fmt"
+	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
-	"flag"
 	"strconv"
-	"fmt"
-	"io/ioutil"
-	"io"
 )
 
 type Client struct {
